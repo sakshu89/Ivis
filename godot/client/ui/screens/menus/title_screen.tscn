@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://cg0v0622aqonf"]
+
+[ext_resource type="Script" uid="uid://dlru38jxq5ytk" path="res://client/ui/screens/menus/title_screen.gd" id="1_hjjn8"]
+[ext_resource type="Texture2D" uid="uid://b3vpv7thxcaox" path="res://client/assets/models/skyboxes/mountain_skybox_0.jpg" id="2_4jr4a"]
+
+[node name="TitleScreen" type="Control" unique_id=1855045235]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hjjn8")
+
+[node name="BackgroundLayer" type="TextureRect" parent="." unique_id=494866289]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4jr4a")
+flip_h = true
+flip_v = true
+
+[node name="ScreenContainer" type="MarginContainer" parent="." unique_id=1829986217]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FlowStates" type="CenterContainer" parent="ScreenContainer" unique_id=1282917142]
+layout_mode = 2
+
+[node name="MainMenu" type="VBoxContainer" parent="ScreenContainer/FlowStates" unique_id=842333544]
+layout_mode = 2
+
+[node name="BtnMainPlay" type="Button" parent="ScreenContainer/FlowStates/MainMenu" unique_id=344494969]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PrimaryActionButton"
+text = "Play"
+
+[node name="BtnIVIS" type="Button" parent="ScreenContainer/FlowStates/MainMenu" unique_id=344494970]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PrimaryActionButton"
+text = "ENTER IVIS"
+
+[node name="BtnSettings" type="Button" parent="ScreenContainer/FlowStates/MainMenu" unique_id=568793574]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PrimaryActionButton"
+text = "Settings"
+
+[node name="BtnQuit" type="Button" parent="ScreenContainer/FlowStates/MainMenu" unique_id=857854876]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PrimaryActionButton"
+text = "Quit"
+
+[node name="PlayMenu" type="VBoxContainer" parent="ScreenContainer/FlowStates" unique_id=2105121867]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="BtnSingleplayer" type="Button" parent="ScreenContainer/FlowStates/PlayMenu" unique_id=1110766753]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PrimaryActionButton"
+text = "Singleplayer"
+
+[node name="HSeparator1" type="HSeparator" parent="ScreenContainer/FlowStates/PlayMenu" unique_id=1546939683]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="InputUsername" type="LineEdit" parent="ScreenContainer/FlowStates/PlayMenu" unique_id=568040657]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"BaseLineEdit"
+placeholder_text = "username"
+
+[node name="InputPassword" type="LineEdit" parent="ScreenContainer/FlowStates/PlayMenu" unique_id=1737429817]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"BaseLineEdit"
+placeholder_text = "password not needed"
+editable = false
+secret = true
+
+[node name="BtnPlayOnline" type="Button" parent="ScreenContainer/FlowStates/PlayMenu" unique_id=1725928505]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PrimaryActionButton"
+text = "Play Online"
+
+[node name="HSeparator2" type="HSeparator" parent="ScreenContainer/FlowStates/PlayMenu" unique_id=1924108432]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HostRow" type="HBoxContainer" parent="ScreenContainer/FlowStates/PlayMenu" unique_id=1033551914]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="BtnHostPlay" type="Button" parent="ScreenContainer/FlowStates/PlayMenu/HostRow" unique_id=1121535690]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"PrimaryActionButton"
+text = "Host & Play"
+
+[node name="BtnHostOnly" type="Button" parent="ScreenContainer/FlowStates/PlayMenu/HostRow" unique_id=2102804398]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"PrimaryActionButton"
+text = "Host Only"
+
+[node name="HSeparator3" type="HSeparator" parent="ScreenContainer/FlowStates/PlayMenu" unique_id=1580226598]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="BtnBack" type="Button" parent="ScreenContainer/FlowStates/PlayMenu" unique_id=1084603445]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PrimaryActionButton"
+text = "Go Back"

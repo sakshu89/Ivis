@@ -1,0 +1,25 @@
+# NOTE: This file is used by registry_builder.gd to generate GDScript and Rust enums.
+# Do not edit generated op_codes.gd or op_codes.rs files directly.
+# Run registry_builder.gd in Godot Editor to regenerate after adding new entries.
+
+# Auth and Network
+AUTH_REQUEST
+AUTH_SUCCESS
+STATE_SYNC
+ENTITY_SPAWN
+ENTITY_DESPAWN
+
+# Input and Movement
+INPUT_TICK
+
+# Skills
+CAST_SKILL
+CANCEL_SKILL
+
+# Communication
+SEND_CHAT
+CHAT_MESSAGE
+
+# Inventory & Interactions
+PICKUP_ITEM
+BURY_ITEM

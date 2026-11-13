@@ -1,0 +1,231 @@
+# Roadmap
+Below you'll find a list of things needed to be accomplished before we can hit the next milestone. This list is still being put together.
+
+## Pre-Alpha
+This phase focuses on getting some of the core functionalities implemented for Reia.
+
+- [x] Solid GECS foundation
+- [x] Animation
+- [ ] Combat Systems
+  - [ ] Health System
+    - [ ] Fade Health Bar Timer
+    - [ ] Mini/Boss Health Bar
+  - [x] Attack System
+  - [x] Death System
+  - [ ] Respawn
+- [ ] Abilities
+  - [x] Core System
+  - [ ] Mobility
+    - [x] Dash
+    - [ ] Double Jump
+    - [ ] Teleport
+  - [ ] Pyro
+    - [x] Fireball
+    - [ ] Explosion
+  - [ ] Electro
+    - [ ] Lightning Strike
+    - [ ] Storm
+  - [ ] Hydro
+    - [ ] Aqua-Infusion [melee punching]
+    - [ ] Bubble Shield
+- [ ] Stats
+  - [x] Core System
+  - [ ] UI
+- [ ] Map
+  - [x] Minimap
+  - [ ] Full Map
+  - [ ] Fog of War
+- [ ] Story Management
+  - [ ] Quest System
+  - [ ] Dialogue System
+  - [ ] Character System
+- [x] Item System
+- [x] Inventory System
+  - [ ] Make a popout version where it's just on the side of the screen and you can still move + attack. On mobile screens this may mean no usable attacks and only movement. Testing needed.
+- [x] Pause Screen
+- [ ] Main Menu
+  - [x] Screens
+    - [x] Title
+    - [ ] Play
+      - [x] Offline
+      - [x] Online
+      - [ ] Confirmation "Play" button that pops up and takes focus when you select one.
+    - [ ] Settings
+      - [x] Audio
+        - [x] Dialogue
+        - [x] Music
+        - [x] Sound Effects
+        - [x] UI Sound
+        - [x] Master Volume
+      - [ ] Keybindings
+        - [ ] Core
+        - [ ] Combat
+        - [ ] UI
+        - [ ] Companion
+      - [ ] Graphics
+        - [ ] Display Size
+        - [ ] Performance
+    - [ ] Credits
+      - [ ] Fonts
+      - [ ] Art
+      - [ ] Code
+      - [ ] License
+    - [ ] Quit
+      - [x] Functionality
+      - [ ] Confirmation "No / Yes"
+- [ ] Particle Effects
+- [x] Water Shader
+- [ ] Sky Shader
+  - [ ] Day/Night
+  - [ ] Clouds
+  - [ ] Rain
+- [ ] Rust
+  - [x] Implement Rust with Godot so some backend services can take advantage of the performance.
+  - [ ] Swap Discord SDK to Rust
+  - [ ] Database
+  - [ ] Multiplayer Migration
+- [ ] Multiplayer
+  - [ ] (Add friend via account name, but they have their own display name, and you can invite them to play with you and you can progress storylines together if you're on the same quest)
+  - [ ] Send and receive private messages
+  - [ ] Send and receive local messages
+  - [ ] Send and receive movement
+  - [ ] Send and receive rotations
+  - [ ] Send and receive actions
+- [ ] Improve Camera
+  - [ ] Smoothing
+- [x] Changelog
+  - [ ] Optional: Create a system for easily tracking changes.
+- [ ] Saving
+  - [ ] ~~MongoDB for Online Environments~~
+  - [ ] ~~PoloDB for Local Environments~~
+  - [ ] Turso Implementation for Offline / Online.
+- [ ] Update
+  - [x] Discord SDK Version
+  - [x] GitHub Actions for automatically building the game
+  - [x] ~~Use Zig for GDExtension~~
+  - [ ] ...
+
+## Alpha
+This phase will be about polishing and introducing complex features.
+
+- [ ] Programming
+  - [ ] Wiki
+    - [ ] ...
+  - [ ] Modding Support
+    - [ ] Documentation
+    - [ ] Implementation
+    - [ ] Hosting
+      - [x] Cloudflare
+      - [ ] Steamworks
+      - [ ] Others
+      - [ ] Vercel (web browsing - We will be moving to Cloudflare Pages soon)
+  - [ ] Spirit
+    - [ ] Locating
+    - [ ] Unlocking
+    - [ ] Deeper Integration with Combat
+  - [ ] Islands
+    - [ ] Building Customization
+    - [ ] Manufacturing
+      - [ ] Gathering
+        - [ ] Wood
+        - [ ] Stone
+        - [ ] Water
+        - [ ] Ores
+      - [ ] Production
+        - [ ] Consumables
+        - [ ] Soulstones
+        - [ ] Wages for other players
+        - [ ] More...
+    - [ ] NPC
+      - [ ] Hiring & Wages
+      - [ ] Setting tasks
+    - [ ] Expeditions
+      - [ ] Zone types
+      - [ ] Enemy scaling
+      - [ ] Risk/Reward progression
+  - [ ] Economy
+    - [ ] Currency System
+      - [ ] Base Currency Usage
+        - [ ] Upgrades
+        - [ ] Consumables
+        - [ ] Island & Hiring
+        - [ ] Expeditions
+      - [ ] Premium Currency Usage
+        - [ ] Skins
+        - [ ] QoL (minimal, like extra backed up slots even though you can have unlimited local slots)
+      - [ ] Island Marketplace
+      - [ ] Pricing Dynamics (rarity, demand, etc)
+  - [ ] Infinite City
+    - [ ] Basic procedural generation
+      - [ ] Implement open world generation
+      - [ ] Open world resource gathering and enemies spawning in dedicated zones based on elements
+    - [ ] Advanced procedural generation
+      - [ ] Dungeons that can be easily regenerated
+      - [ ] Dungeons that can be custom created and turned into a seed later
+    - [ ] Maps and storing dungeons on maps for resale
+  - [ ] Social Systems
+    - [ ] Guilds
+    - [ ] Island Fleets
+    - [ ] Friends
+    - [ ] Events
+    - [ ] Listening to Music Together
+  - [ ] Accessibility
+    - [ ] Color Blind Mode
+    - [ ] Control Adjustment
+    - [ ] Subtitles/Closed Captioning
+    - [ ] Adjustable Text Size
+    - [ ] High Contrast Mode
+  - [ ] Difficulty
+    - [ ] Global difficulty
+    - [ ] Boss difficulty
+    - [ ] Event difficulty
+    - [ ] Expedition difficulty
+- [ ] Art
+  - [ ] Animation
+  - [ ] Concept Art
+  - [ ] Promotional Art
+  - [ ] Character Design
+  - [ ] Environment Design
+  - [ ] UI/UX Design
+- [ ] Sound
+  - [ ] Ambient Sounds
+  - [ ] Sound Effects
+  - [ ] Background Music
+  - [ ] Voice Acting
+  - [ ] Dialogue Recording
+- [ ] Marketing
+  - [ ] Marketing Art
+    - [ ] Social Media
+    - [ ] Steam
+  - [X] Email Marketing
+  - [X] SEO Optimization
+  - [ ] Content Marketing (Blogs, Articles)
+  - [ ] Social Media Campaigns
+  - [ ] Partnerships
+  - [ ] Press Kit / Releases
+- [ ] Community
+  - [ ] Community Events & Contests
+  - [ ] Regular Community Updates
+  - [ ] Community Guidelines
+  - [ ] Player Feedback System
+  - [ ] Community Moderation
+  - [ ] Open the Discord Server
+
+## Beta
+This phase targets bugs and potentially features that would enhance existing gameplay.
+
+- [ ] Additions
+- [ ] Updates
+- [ ] Fixes
+- [ ] Removals
+- [ ] Marketing
+- [ ] Community
+
+## Release
+The final stretch. This targets final marketing, trailers, and listening to player feedback and concerns. This feedback should be addressed before launch date.
+
+- [ ] Questions
+- [ ] Comments
+- [ ] Concerns
+- [ ] Marketing
+- [ ] Community

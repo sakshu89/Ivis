@@ -1,0 +1,15 @@
+[configuration]
+entry_symbol = "gdext_rust_init"
+compatibility_minimum = 4.6
+reloadable = true
+
+[libraries]
+windows.debug.x86_64 = "res://build/bin/reia_backend.windows.debug.x86_64.dll"
+windows.release.x86_64 = "res://build/bin/reia_backend.windows.release.x86_64.dll"
+linux.debug.x86_64 = "res://build/bin/libreia_backend.linux.debug.x86_64.so"
+linux.release.x86_64 = "res://build/bin/libreia_backend.linux.release.x86_64.so"
+
+macos.debug.x86_64 = "res://build/bin/libreia_backend.macos.debug.universal.dylib"
+macos.debug.arm64 = "res://build/bin/libreia_backend.macos.debug.universal.dylib"
+macos.release.x86_64 = "res://build/bin/libreia_backend.macos.release.universal.dylib"
+macos.release.arm64 = "res://build/bin/libreia_backend.macos.release.universal.dylib"

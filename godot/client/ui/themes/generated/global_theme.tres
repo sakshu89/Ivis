@@ -1,0 +1,77 @@
+[gd_resource type="Theme" format=3 uid="uid://c5848jpc4wmx4"]
+
+[ext_resource type="FontFile" uid="uid://d3vaf1msq4riv" path="res://client/assets/fonts/roboto-latin-900-normal.ttf" id="1_xkbi8"]
+[ext_resource type="FontFile" uid="uid://cgiw1u6elrrsd" path="res://client/assets/fonts/poppins-latin-700-normal.ttf" id="2_7xo16"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkbi8"]
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 1)
+border_width_bottom = 2
+border_color = Color(0.33333334, 0.8666667, 0.3882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xo16"]
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 1)
+border_width_bottom = 2
+border_color = Color(0.33333334, 0.5568628, 0.8666667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thwf6"]
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 0.5)
+border_width_bottom = 2
+border_color = Color(0.33333334, 0.5568628, 0.8666667, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgwxd"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+bg_color = Color(0.37254903, 0.5647059, 0.5921569, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3t1lo"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+bg_color = Color(0.33333334, 0.5568628, 0.8666667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[resource]
+default_font = ExtResource("1_xkbi8")
+default_font_size = 16
+BaseLineEdit/base_type = &"LineEdit"
+BaseLineEdit/colors/font_color = Color(1, 1, 1, 1)
+BaseLineEdit/colors/font_placeholder_color = Color(0.9607843, 0.9607843, 0.9607843, 0.5)
+BaseLineEdit/font_sizes/font_size = 18
+BaseLineEdit/fonts/font = ExtResource("1_xkbi8")
+BaseLineEdit/styles/focus = SubResource("StyleBoxFlat_xkbi8")
+BaseLineEdit/styles/normal = SubResource("StyleBoxFlat_7xo16")
+BaseLineEdit/styles/read_only = SubResource("StyleBoxFlat_thwf6")
+BodyTextLabel/base_type = &"Label"
+BodyTextLabel/font_sizes/font_size = 18
+BodyTextLabel/fonts/font = ExtResource("1_xkbi8")
+HeaderLabel/base_type = &"Label"
+HeaderLabel/font_sizes/font_size = 32
+HeaderLabel/fonts/font = ExtResource("2_7xo16")
+PrimaryActionButton/base_type = &"Button"
+PrimaryActionButton/font_sizes/font_size = 20
+PrimaryActionButton/fonts/font = ExtResource("2_7xo16")
+PrimaryActionButton/styles/hover = SubResource("StyleBoxFlat_pgwxd")
+PrimaryActionButton/styles/normal = SubResource("StyleBoxFlat_3t1lo")
+PrimaryActionButton/styles/pressed = SubResource("StyleBoxFlat_pgwxd")

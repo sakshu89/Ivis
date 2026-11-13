@@ -1,0 +1,48 @@
+name: IVIS Android
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  GODOT_VERSION: 4.6
+  PROJECT_PATH: godot
+
+jobs:
+  android:
+    name: Build IVIS Android
+    runs-on: ubuntu-24.04
+    container:
+      image: barichello/godot-ci:4.6
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          lfs: true
+
+      - name: Ensure Git LFS objects are present
+        run: |
+          git lfs install --local
+          git lfs pull
+
+      - name: Import project
+        working-directory: godot
+        run: godot --headless --editor --quit --import
+
+      - name: Export IVIS APK
+        working-directory: godot
+        run: |
+          mkdir -p ../build/android
+          godot --headless --verbose --export-release android ../build/android/IVIS.apk
+
+      - name: Upload IVIS APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: IVIS-Android
+          path: build/android/IVIS.apk

@@ -1,0 +1,20 @@
+class_name SpawnerSystem extends System
+
+func query() -> QueryBuilder:
+	# Only tick spawners that are in active chunks (players are nearby)
+	return q.with_all([C_SpawnPoint, C_ChunkActive])
+
+func process(entities: Array[Entity], _components: Array, delta: float) -> void:
+	for entity in entities:
+		var spawner := entity.get_component(C_SpawnPoint) as C_SpawnPoint
+		
+		if spawner.current_active < spawner.max_active:
+			spawner.timer -= delta
+			if spawner.timer <= 0.0:
+				var monster: Entity = ServerPrefabCache.get_headless_prefab(spawner.prefab).instantiate()
+				monster.add_relationship(Relationship.new(C_SpawnedBy.new(), entity))
+
+				ECS.world.add_entity(monster)
+
+				spawner.current_active += 1
+				spawner.timer = spawner.respawn_delay

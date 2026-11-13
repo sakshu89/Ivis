@@ -1,0 +1,65 @@
+extends Node
+## AUTOLOAD: EntityMap
+## An O(1) lookup table connecting Network IDs to ECS Entities.
+
+class EntityMapNamespace extends RefCounted:
+	## Forward Lookup: Network ID (int) -> Entity (Object reference)
+	var _net_id_to_entity: Dictionary[int, Entity] = {}
+
+	## Reverse Lookup: ECS ID (int) -> Network ID (int)
+	var _ecs_id_to_net_id: Dictionary[int, int] = {}
+
+	## Called when an entity (Player or Monster) spawns into the world
+	func register(network_id: int, entity: Entity) -> void:
+		_net_id_to_entity[network_id] = entity
+		# Store the internal ECS ID for reverse lookups
+		_ecs_id_to_net_id[entity.ecs_id] = network_id
+
+	func unregister(network_id: int) -> void:
+		if _net_id_to_entity.has(network_id):
+			var entity := _net_id_to_entity[network_id]
+			var success_to_id := _ecs_id_to_net_id.erase(entity.ecs_id)
+			if not success_to_id:
+				push_error("[EntityMap] Failed to erase entity ID from reverse lookup.")
+			var success_to_entity := _net_id_to_entity.erase(network_id)
+			if not success_to_entity:
+				push_error("[EntityMap] Failed to erase network ID from lookup.")
+
+	## O(1) Lookup: Get the ECS Entity for an incoming network packet
+	func get_entity(network_id: int) -> Entity:
+		return _net_id_to_entity.get(network_id, null)
+
+	## O(1) Lookup: Get the Network ID for an outgoing ECS broadcast
+	func get_network_id(entity: Entity) -> int:
+		return _ecs_id_to_net_id.get(entity.ecs_id, 0)
+
+	## Dynamically aggregates all valid connected player IDs for broadcasts.
+	func get_all_active_clients() -> PackedInt64Array:
+		var ids := PackedInt64Array()
+		for net_id: int in _net_id_to_entity.keys():
+			if net_id > 0: # 0 is server, negatives are NPCs/Dummies
+				var ids_failed := ids.push_back(net_id)
+				if ids_failed:
+					push_error("[EntityMap] Failed to push active client ID: %d" % net_id)
+
+		# Fallback for local loopback demo if it executes before the player fully mounts
+		if ids.is_empty():
+			var ids_failed := ids.push_back(0)
+			if ids_failed:
+				push_error("[EntityMap] Failed to push fallback client ID 0 for broadcast!")
+		return ids
+
+	func clear() -> void:
+		_net_id_to_entity.clear()
+		_ecs_id_to_net_id.clear()
+
+# ==========================================
+# INSTANTIATED NAMESPACES
+# ==========================================
+
+var server := EntityMapNamespace.new()
+var client := EntityMapNamespace.new()
+
+func clear_all() -> void:
+	server.clear()
+	client.clear()
